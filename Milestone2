@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main()
+{  
+    char yes;
+    int a, b, c, choice;
+
+    yes = 'y';
+    while (yes == 'y' || yes == 'Y')
+    {
+    
+        printf("Enter first integer: "); 
+        scanf_s(" %d", &a);
+
+        printf("Enter second integer: ");
+        scanf_s(" %d", &b);
+        
+        printf("\nAdd(1), Subtract(2): ");
+        scanf_s(" %d", &choice);
+        
+        printf("\n");
+        switch (choice)
+        {
+        case(1):
+            c = a + b;
+            printf("%d + %d = %d\n", a, b, c);
+            break;
+        case(2):
+            c = a - b;
+            printf("%d - %d = %d\n", a, b, c);
+            break;
+        }
+        
+        printf("\nAgain (Y/N): ");
+        scanf_s(" %c", &yes);
+    }
+    
+    return 0;
+}
