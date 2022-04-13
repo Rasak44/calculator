@@ -1,7 +1,10 @@
 #include <stdio.h>
 
-void Enterfirstinteger(char* First) {
+int Enterfirstinteger() {
+    int a;
     printf("Enter First Integer: ");
+    scanf(" %d", &a);
+    return a;
 }
 
 void Entersecondinteger(char* Second) {
@@ -27,19 +30,22 @@ int main()
     {
         
         char* First = "Enter First Number";
-        Enterfirstinteger(First);
+        printf("About to call function\n");
+        printf("I got a as %d", a);
+        a = Enterfirstinteger();
+        printf("Back from function\n");
+        printf("I got a as %d", a);
 
-        scanf_s(" %d", &a);
+
 
         char* Second = "Enter Second Number";
         Entersecondinteger(Second);
-
-        scanf_s(" %d", &b);
+        scanf(" %d", &b);
 
         char* Third = "\nAdd(1), Subtract(2):";
         Add1Subtract2(Third);
 
-        scanf_s(" %d", &choice);
+        scanf(" %d", &choice);
 
         printf("\n");
 
@@ -58,7 +64,7 @@ int main()
         char* Fourth = "Again";
         Again(Fourth);
 
-        scanf_s(" %c", &yes);
+        scanf(" %c", &yes);
     }
     return 0;
 }
