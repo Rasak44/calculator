@@ -2,90 +2,103 @@
 Simple Addition/Subtraction Calculator
 
 // Header file which has the information to include the inout/output realted functions.
-
+// Building of new structures upon code building unions.
+        
     #include <stdio.h>
 
-// printf("Enter first integer: "); is a function to put out a prompting message.
-
-// Void Enterfirstinteger(char* First) is creating a user defined function to create control over varibles
-
-    void Enterfirstinteger(char* First) {
-    printf("Enter First Integer: ");
+    int EnterFirstinteger(char* msg)
+    {
+    int a;
+    printf(msg);
+    scanf_s(" %d", &a);
+    return a;
     }
 
-// Enter second integer is asking for the second part of the math question.
+// int new structures upon code. 
 
-    void Entersecondinteger(char* Second) {
-    printf("Enter Second Integer: ");
+    int EnterSecondinteger(char* msg)
+    {
+    int b;
+    printf(msg);
+    scanf_s(" %d", &b);
+    return b;
     }
-// This part is asking the user if they want to "Add or Subtract"
-
-    void Add1Subtract2(char* Third) {
-    printf("\nAdd(1), Subtract(2): ");
+    int Add1Subtract2(char* msg)
+    {
+    int c;
+    printf(msg);
+    scanf_s(" %d", &c);
+    return c;
     }
-
-// printf("\nAgain (Y/N): "); is the loop function to allow the user to ask another question.
-
-    void Again(char* Fourth) {
-    printf("\nAgain (Y/N): ");
+    int Again(char* msg)
+    {
+    int again;
+    printf(msg);
+    scanf_s(" %d", &again);
+    return again;
     }
-
-// int main represents that the function returns some integer even "0" at the end of the program.
-
     int main()
     {
-
 // "char" stores a single character and an "int is a varible used to store an integer.
-    
+   
     char yes;
-    int a, b, c, choice;
+    int a, b, c, choice, again;
 
-// Giving a user a choice to pick
-  
-     yes = 'y';
+    yes = 'y';
     while (yes == 'y' || yes == 'Y')
     {
+// int main represents that the function returns some integer even "0" at the end of the program.
+
+        int main();
+        char* First = "First Integer: ";
+        printf("Please Enter First Number\n");
+        a = EnterFirstinteger(First);
+        printf("\nCalculating...\n");
+        
 // char* First = "Enter First Number"; is a varible that is being controlled by the user defined function.
-        
-        char* First = "Enter First Number";
-        Enterfirstinteger(First);
 
-        scanf_s(" %d", &a);
+        char* Second = "Second Integer: ";
+        printf("\nPlease Enter Second Number\n");
+        b = EnterSecondinteger(Second);
+        printf("\nCalculating...\n");
+        
 // This is the second varible being controlled by the user defined function.
-        
-        char* Second = "Enter Second Number";
-        Entersecondinteger(Second);
 
-        scanf_s(" %d", &b);
-// This is the third varible controlled by the user defined function.
+        char* Third = "Add(1), Subtract(2):\n";
+        printf("\nPlease Enter (1) for Addition OR Please Enter (2) for Subtraction!\n");
+        c = Add1Subtract2(Third);
+        printf("\nFinal choice Press 1 for Addition or 2 for Subtraction and Press Enter!\n");
         
-        char* Third = "\nAdd(1), Subtract(2):";
-        Add1Subtract2(Third);
+// This is the third varible controlled by the user defined function
 
-        scanf_s(" %d", &choice);
+        scanf_s(" %d", & choice);
+        
 // This segment is where the program will show the answer to the math question.
-        
-        printf("\n");
-// "Switch" is an alternate to if-else-if lader statement which allows to execute multiple operations for different possibles of values of a single varible.
-        
+// "Switch" is an alternate to if-else-if lader statement which allows to execute multiple operations for different possibles of values of a single varible. 
+
         switch (choice)
         {
         case(1):
             c = a + b;
-            printf("%d + %d = %d\n", a, b, c);
+            printf("\n%d + %d = %d\n", a, b, c);
             break;
         case(2):
             c = a - b;
-            printf("%d - %d = %d\n", a, b, c);
+            printf("\n%d - %d = %d\n", a, b, c);
             break;
+
         }
 
-        char* Fourth = "Again";
-        Again(Fourth);
+        char* Fourth = "Y or N?";
+        printf("\nWould you want to Enter another Calculation?\n");
+        again = Again(Fourth);
+        printf("\n");
 
         scanf_s(" %c", &yes);
+        
+        printf("\n");
     }
 // return 0; means that the program will execute successfully and did what it was intended to do. 
-    
-    return 0;
+
+        return 0;
 }
